@@ -1,0 +1,7 @@
+{
+  "name": "moneyTracker",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

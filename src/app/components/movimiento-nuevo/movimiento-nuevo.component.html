@@ -1,0 +1,17 @@
+<ion-card>
+  <ion-item>
+    <input
+      type="checkbox"
+      [checked]="movimiento.completado"
+      aria-label="Marcar movimiento como completado"
+      class="movimiento-checkbox">
+
+    <ion-label [class.tachado]="movimiento.completado">
+      {{ movimiento.titulo }}
+    </ion-label>
+
+    <ion-button (click)="mostrarDetalles()" slot="end">
+      Ver
+    </ion-button>
+  </ion-item>
+</ion-card>
