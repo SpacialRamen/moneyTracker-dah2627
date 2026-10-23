@@ -2,11 +2,11 @@
   <ion-item>
     <input
       type="checkbox"
-      [checked]="movimiento.completado"
-      aria-label="Marcar movimiento como completado"
+      [checked]="movimiento.pagado"
+      aria-label="Marcar movimiento como pagado"
       class="movimiento-checkbox">
 
-    <ion-label [class.tachado]="movimiento.completado">
+    <ion-label [class.tachado]="movimiento.pagado">
       {{ movimiento.titulo }}
     </ion-label>
 

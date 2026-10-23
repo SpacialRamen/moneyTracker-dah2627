@@ -28,8 +28,78 @@
     - Por cada objeto 'movimiento' que haya en el array 'listaDeMovimientos'...
     - ...Angular creará una instancia de nuestro componente <app-movimiento-nuevo>.
   -->
-  <movimiento-nuevo
-    *ngFor="let movimiento of listaDeMovimientos"
-    [movimiento]="movimiento"> <!-- Property Binding: le pasamos el objeto 'movimiento' actual al @Input del componente hijo -->
-  </movimiento-nuevo>
+  <ion-content [fullscreen]="true">
+
+    <ion-header collapse="condense">
+      <ion-toolbar color="primary">
+        <ion-title size="large">
+          Lista de Movimientos
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <div *ngIf="listaDeMovimientos.length === 0" class="mensaje-vacio">
+      <p>¡Enhorabuena!</p>
+      <p>No tienes movimientos pendientes.</p>
+    </div>
+
+    <!-- Sustituye el componente de lista por este grid -->
+
+    <ion-grid>
+
+      <ion-row>
+
+        <ion-col
+          size="12"
+          size-md="6"
+          *ngFor="let movimiento of listaDeMovimientos">
+
+          <ion-card>
+
+            <ion-card-header>
+              <ion-card-title>
+                {{ movimiento.titulo }}
+              </ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+
+              <p>
+                <strong>Razón:</strong>
+                {{ movimiento.razon }}
+              </p>
+
+              <p>
+                <strong>Cantidad:</strong>
+                {{ movimiento.cantidad }} €
+              </p>
+
+              <p>
+                <strong>Estado:</strong>
+                {{ movimiento.pagado ? 'Pagado' : 'Pendiente' }}
+              </p>
+
+            </ion-card-content>
+
+          </ion-card>
+
+        </ion-col>
+
+      </ion-row>
+
+    </ion-grid>
+
+    <ion-toolbar>
+      <ion-title size="large" align="center">
+        Capital Disponible y Gastado
+      </ion-title>
+    </ion-toolbar>
+
+  </ion-content>
+
+  <ion-toolbar>
+    <ion-title size="large" align="center">Capital Disponible y
+      Gastado</ion-title>
+  </ion-toolbar>
+
 </ion-content>

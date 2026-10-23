@@ -4,5 +4,5 @@ export interface Movimientos {
     titulo: string;
     razon: string;
     cantidad: number;
-    completado: boolean;
+    pagado: boolean;
 }
