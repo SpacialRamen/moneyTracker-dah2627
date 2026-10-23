@@ -5,4 +5,5 @@ export interface Movimientos {
     razon: string;
     cantidad: number;
     pagado: boolean;
+    tipo: 'ingreso' | 'gasto'; 
 }
