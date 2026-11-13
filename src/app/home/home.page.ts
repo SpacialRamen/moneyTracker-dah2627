@@ -58,10 +58,14 @@ import { CommonModule } from '@angular/common';
 export class HomePage {
 
   listaDeMovimientos: Movimientos[] = [
-    { id: 1, titulo: 'Hacer la compra mercadona', razon: 'Compra diaria', cantidad: 50, pagado: true, tipo: 'gasto' },
+    { id: 1, titulo: 'Hacer la compra mercadona', razon: 'Comida', cantidad: 50, pagado: true, tipo: 'gasto' },
     { id: 2, titulo: 'Suscripcion Netflix', razon: 'Ocio', cantidad: 20, pagado: false, tipo: 'gasto' },
-    { id: 3, titulo: 'Nothing Phone 4a', razon: 'Tecnología', cantidad: 250, pagado: false, tipo: 'gasto' },
-    { id: 4, titulo: 'Nómina', razon: 'Trabajo', cantidad: 1500, pagado: true, tipo: 'ingreso' }
+    { id: 3, titulo: 'Nothing Phone 4a', razon: 'Tecnologia', cantidad: 250, pagado: false, tipo: 'gasto' },
+    { id: 4, titulo: 'Nómina', razon: 'Trabajo', cantidad: 1500, pagado: true, tipo: 'ingreso' },
+    { id: 5, titulo: 'Pago Bizum', razon: 'Bizum', cantidad: 100, pagado: true, tipo: 'ingreso' },
+    {id: 6, titulo: 'Taller de coche', razon: 'Coche', cantidad: 300, pagado: true, tipo: 'gasto'},
+    {id: 7, titulo: 'Retiro Bitcoin', razon: 'Bitcoin', cantidad: 2500, pagado: true, tipo: 'ingreso'},
+    {id: 8, titulo: 'Pago alquiler', razon: 'Casa', cantidad: 800, pagado: true, tipo: 'gasto'},
   ];
 
   capitalInicial: number = 0;
@@ -84,6 +88,39 @@ export class HomePage {
 
   get saldoDisponible(): number {
     return this.totalIngresos - this.totalGastos;
+  }
+
+  obtenerImagen(razon: string): string {
+
+    switch (razon.toLowerCase()) {
+
+      case 'bitcoin':
+        return 'assets/img/bitcoin.png';
+
+      case 'bizum':
+        return 'assets/img/bizum.png';
+
+      case 'coche':
+        return 'assets/img/coche.png';
+
+      case 'comida':
+        return 'assets/img/comida.png';
+
+      case 'casa':
+        return 'assets/img/casa.png';
+
+      case 'tecnologia':
+        return 'assets/img/tecnologia.png';
+
+      case 'trabajo':
+        return 'assets/img/trabajo.png';
+
+      case 'ocio':
+        return 'assets/img/ocio.png';
+
+      default:
+        return 'assets/img/home.png';
+    }
   }
 
 }

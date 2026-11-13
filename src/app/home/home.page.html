@@ -4,6 +4,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-title>
+      <ion-icon name="cash-outline"></ion-icon>
       Lista de Movimientos
     </ion-title>
     <ion-buttons slot="end">
@@ -19,8 +20,16 @@
   <ion-header collapse="condense">
     <ion-toolbar color="primary">
       <ion-title size="large">Lista de Movimientos</ion-title>
+
     </ion-toolbar>
   </ion-header>
+
+  <div class="ion-padding">
+    <ion-button expand="block" color="secondary" routerLink="/movimiento-nuevo">
+      <ion-icon name="add-circle-outline"></ion-icon>
+      Añadir Movimiento
+    </ion-button>
+  </div>
 
   <!-- Directiva *ngIf: este div solo existirá en el DOM si la condición es verdadera -->
   <div *ngIf="listaDeMovimientos.length === 0" class="mensaje-vacio">
@@ -51,25 +60,38 @@
 
           <ion-card-content>
 
-            <p>
-              <strong>Razón:</strong>
-              {{ movimiento.razon }}
-            </p>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <p>
+                    <strong>Razón:</strong>
+                    {{ movimiento.razon }}
+                  </p>
 
-            <p>
-              <strong>Cantidad:</strong>
-              {{ movimiento.cantidad }} €
-            </p>
+                  <p>
+                    <strong>Cantidad:</strong>
+                    {{ movimiento.cantidad }} €
+                  </p>
 
-            <p>
-              <strong>Estado:</strong>
-              {{ movimiento.pagado ? 'Pagado' : 'Pendiente' }}
-            </p>
+                  <p>
+                    <strong>Estado:</strong>
+                    {{ movimiento.pagado ? 'Pagado' : 'Pendiente' }}
+                  </p>
 
-            <p>
-              <strong>Tipo:</strong>
-              {{ movimiento.tipo }}
-            </p>
+                  <p>
+                    <strong>Tipo:</strong>
+                    {{ movimiento.tipo }}
+                  </p>
+                </ion-col>
+                <ion-col class="ion-text-right">
+                  <img
+                    [src]="obtenerImagen(movimiento.razon)"
+                    width="100"
+                    height="100"
+                    alt="Imagen de categoría">
+                </ion-col>
+              </ion-row>
+            </ion-grid>
 
           </ion-card-content>
 
@@ -83,6 +105,7 @@
 
   <ion-toolbar color="primary">
     <ion-title class="ion-text-center">
+      <ion-icon name="cash-outline"></ion-icon>
       Capital Disponible y Gastado
     </ion-title>
   </ion-toolbar>

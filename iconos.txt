@@ -1,0 +1,7 @@
+<ion-icon name="cash-outline"></ion-icon> icono aplicacion
+
+<ion-icon name="chevron-back-sharp"></ion-icon> icono income
+
+<ion-icon name="chevron-forward-sharp"></ion-icon> icono outcome
+
+<ion-icon name="add-circle-outline"></ion-icon> icono añadir 

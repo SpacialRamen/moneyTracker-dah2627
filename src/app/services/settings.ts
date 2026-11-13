@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class SettingsService {
+export class Settings {
   // Estado privado para proteger la variable y controlar su acceso
   private darkMode: boolean = false;
 

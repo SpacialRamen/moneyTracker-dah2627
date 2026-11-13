@@ -1,7 +1,7 @@
 // src/app/pages/ajustes/ajustes.page.ts
 
 import { Component } from '@angular/core';
-import { SettingsService } from '../../services/settings';
+import { Settings } from '../../services/settings';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonList, IonListHeader, IonItem, IonLabel, IonToggle, IonButtons, IonBackButton } from '@ionic/angular';
 
 @Component({
@@ -19,7 +19,7 @@ export class AjustesPage {
 
   // Al declarar el parámetro como 'public', Angular nos permite acceder a 
   // 'settingsService' directamente desde el archivo HTML (plantilla).
-  constructor(public settingsService: SettingsService) { }
+  constructor(public settingsService: Settings) { }
 
   // Método que se ejecuta cada vez que el usuario mueve el interruptor (ion-toggle)
   onToggleChange(event: any) {
